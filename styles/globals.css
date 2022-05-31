@@ -14,3 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.default_grid th {
+  text-align: left;
+  font-size: x-large;
+  background-color: "red ";
+}
