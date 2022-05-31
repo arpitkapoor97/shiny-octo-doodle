@@ -3,7 +3,7 @@ import { createStore } from "redux";
 const stateReducer = (
   state = {
     filter: "",
-    pokemonSet: [],
+    pokemonSet: require("../src/pokemon.json"),
     selectedPoke: null,
   },
   { type, payload }

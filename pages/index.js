@@ -21,22 +21,21 @@ const TwoColumnLayout = styled.div({
   gridColumnGap: "1rem",
 });
 
-export async function getServerSideProps() {
-  const pokemonSet = await (
-    await fetch("http://localhost:3000/pokemon.json")
-  ).json();
-  return {
-    props: {
-      pokemonSet,
-    }, // will be passed to the page component as props
-  };
-}
+// export async function getServerSideProps() {
+//   const pokemonSet = require("../src/pokemon.json");
 
-export default function Home({ pokemonSet }) {
-  store.dispatch({
-    type: "SET_POKEMON_SET",
-    payload: pokemonSet,
-  });
+//   return {
+//     props: {
+//       pokemonSet,
+//     }, // will be passed to the page component as props
+//   };
+// }
+// {pokemonSet}
+export default function Home() {
+  // store.dispatch({
+  //   type: "SET_POKEMON_SET",
+  //   payload: pokemonSet,
+  // });
 
   return (
     <Container>

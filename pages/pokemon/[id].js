@@ -10,15 +10,30 @@ const Container = styled.div({
   paddingTop: "1rem",
 });
 
-export async function getServerSideProps(context) {
-  const pokemonSet = await (
-    await fetch("http://localhost:3000/pokemon.json")
-  ).json();
-  const pokemon = pokemonSet.find(({ id }) => id.toString() == context.query.id);
+export async function getStaticProps(context) {
+  const pokemonSet = require("../../src/pokemon.json");
+  const pokemon = pokemonSet.find(
+    ({ id }) => id.toString() == context.params.id
+  );
   return {
     props: {
       pokemon,
     }, // will be passed to the page component as props
+  };
+}
+
+export async function getStaticPaths() {
+  const pokemonSet = require("../../src/pokemon.json");
+  return {
+    // paths: [
+    //   // { params: { ... } }
+    // ],
+    paths: pokemonSet.map((path) => ({
+      params: {
+        id: path.id.toString(),
+      },
+    })),
+    fallback: false, // false or 'blocking'
   };
 }
 

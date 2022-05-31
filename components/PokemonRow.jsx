@@ -16,7 +16,7 @@ function PokemonRow({ poke, onSelect, isSelected }) {
   return (
     <tr>
       <td>
-        <Link href={`pokemon/${poke.id}`}>
+        <Link href={`/pokemon/${poke.id}`}>
           <a>{poke.name.english}</a>
         </Link>
       </td>

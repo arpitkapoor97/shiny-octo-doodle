@@ -1,6 +1,4 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
-
-module.exports = nextConfig
+module.exports = {
+  basePath: "/shiny-octo-doodle",
+  assetPrefix: "/shiny-octo-doodle/",
+};
